@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Finch Details</h1>
+<h1 class="center-align blue-grey-text text-darken-4">Finch Details</h1>
 
-<div class="card">
-  <div class="card-content">
+<div class="card blue-grey darken-1">
+  <div class="card-content white-text">
     <span class="card-title">{{ finch.name }}</span>
     <p>Family: {{ finch.family}}</p>
     <p>Personality: {{ finch.description|linebreaks }}</p>
     <p>Age: {{ finch.age }}</p>
 
+  </div>
+  <div class="card-action">
+    <a href="{% url 'finches_update' finch.id %}" class="white-text">Edit</a>
+    <a href="{% url 'finches_delete' finch.id %}" class="white-text">Delete</a>
   </div>
 </div>
 
